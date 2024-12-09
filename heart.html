@@ -13,10 +13,18 @@
   height: 100%;
   padding: 0;
   margin: 0;
-  background: #FFF;
+ 
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0; /* Loại bỏ margin mặc định */
+  padding: 0;
+  background-image: url('https://tienndungg1606.github.io/ngancute1606/ngancute1606.png'); /* URL ảnh */
+  background-size: cover; /* Phủ kín màn hình */
+  background-repeat: no-repeat; /* Không lặp lại ảnh */
+  background-position: center; /* Căn giữa ảnh */
+  opacity: 2; /* Điều chỉnh độ mờ (0.1 đến 1) */
+  z-index: -1; /* Đảm bảo nó nằm phía sau nội dung */
  
 }
  
@@ -334,16 +342,17 @@ var ParticlePool = (function() {
 })(document.getElementById('pinkboard'));
   </script>
   <div class="center-text",
-  style="background-color:rgb(255, 255, 255);
+  style="position: absolute;
+
         width: 100%;
-        color: rgb(248, 6, 183);
+        color: rgb(255, 0, 187);
         height:100%;
         font-size: 25px;
         font-style: italic;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 5px;
+        margin-bottom: 0px;
         text-align: center;">Giáng sinh vui vẻ nhé🎄<br> Yêu Ngân của anh❤
         </div>
  </BODY>
