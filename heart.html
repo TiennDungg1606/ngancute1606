@@ -83,6 +83,11 @@ canvas {
     color: rgb(255, 50, 180); /* Đổi màu ở giữa */
   }
 }
+@keyframes colorBlink {
+    0% { color: rgb(225, 12, 168); }
+    100% { color: rgb(209, 21, 156); }
+}
+
 
 
 
@@ -356,6 +361,9 @@ var ParticlePool = (function() {
     render();
   }, 10);
 })(document.getElementById('pinkboard'));
+
+  
+
   </script>
   <div class="center-text",
   style="position: absolute;
@@ -369,7 +377,30 @@ var ParticlePool = (function() {
         align-items: center;
         justify-content: center;
         margin-bottom: 0px;
+        text-shadow: 2px 2px 4px rgba(211, 24, 96, 0.5);
+        animation: colorBlink 2s infinite;
         text-align: center;">Giáng sinh vui vẻ nhé🎄<br> Yêu Ngân của anh❤
         </div>
+        <video id="rotate-video" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1001;" autoplay loop muted>
+            <source src="https://tienndungg1606.github.io/ngancute1606/xoay.mp4" type="video/mp4">
+        </video>
+        <script>
+            // Kiểm tra hướng màn hình
+            function checkOrientation() {
+                const rotateScreen = document.getElementById("rotate-screen");
+                const rotateVideo = document.getElementById("rotate-video");
+                if (window.innerWidth < window.innerHeight) {
+            // Nếu màn hình dọc, hiển thị video
+            rotateVideo.style.display = "block"; // Hiển thị video
+          } else {
+            // Nếu màn hình ngang, ẩn video và hiển thị nội dung chính
+            rotateVideo.style.display = "none";
+              }
+            }
+        
+            // Lắng nghe sự thay đổi kích thước màn hình
+            window.addEventListener("resize", checkOrientation);
+            window.addEventListener("load", checkOrientation);
+        </script>
  </BODY>
 </HTML>
